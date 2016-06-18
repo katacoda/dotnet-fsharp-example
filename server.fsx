@@ -10,4 +10,5 @@ let config =
        bindings = [HttpBinding.mk HTTP (IPAddress.Parse "0.0.0.0") 8083us]
   }
 
-startWebServer config (Successful.OK "Hello F# World!")
+let resp = "Hello F# World! Processed by " + System.Environment.MachineName
+startWebServer config (Successful.OK resp)
